@@ -24,6 +24,7 @@ body {
   font-size: 1.8rem;
   font-family: "Bai Jamjuree", sans-serif;
   font-weight: 400;
+  color: $color-grey-2;
 }
 
 img,
@@ -32,4 +33,122 @@ svg,
 video {
   display: block;
   width: 100%;
+}
+
+.header {
+  background-image: url(../images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  padding: 10rem 0 5rem;
+}
+
+.section-heading {
+  width: min(100%, 65rem);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+
+  &__photo {
+    width: 7rem;
+  }
+
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  &__button {
+    &:link,
+    &:visited {
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      padding: 1rem 3rem;
+      border-radius: 100rem;
+      font-size: 1.6rem;
+      transition: opacity 0.2s;
+    }
+
+    &--cyan {
+      background-color: $color-cyan;
+      box-shadow: 0 0.25rem 0.1rem hsl(171, 68%, 32%);
+    }
+
+    &--blue {
+      background-color: $color-blue;
+      box-shadow: 0 0.25rem 0.1rem hsl(233, 46%, 48%);
+    }
+
+    &:hover,
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &--1 {
+    padding: 5rem 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+
+  &__features-1 {
+    width: min(80rem, 100%);
+
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  &__left {
+    width: 50%;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  &__photo-1 {
+    width: 65rem;
+    translate: -35rem 0;
+  }
+
+  &__features-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  &__description {
+    line-height: 1.5;
+  }
+}
+
+.heading-1 {
+  font-size: 4rem;
+  color: $color-grey-1;
+}
+
+.heading-2 {
+  color: $color-grey-1;
+}
+
+.heading-3 {
+  color: $color-grey-1;
 }
