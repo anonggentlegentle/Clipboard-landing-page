@@ -33,6 +33,7 @@ video {
 .header {
   background-image: url(../images/bg-header-desktop.png);
   background-repeat: no-repeat;
+  background-size: cover;
   padding: 10rem 0 5rem;
 }
 
@@ -87,6 +88,18 @@ video {
   flex-direction: column;
   row-gap: 6rem;
 }
+.main-content--2 {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6rem;
+}
+.main-content--3 {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6rem;
+}
 .main-content__features-1 {
   width: min(80rem, 100%);
   display: flex;
@@ -113,10 +126,78 @@ video {
 .main-content__description {
   line-height: 1.5;
 }
+.main-content__tools {
+  text-align: center;
+  width: min(115rem, 100%);
+  display: flex;
+  column-gap: 1.5rem;
+}
+.main-content__tool-box {
+  width: 33.33333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+.main-content__tool-icon {
+  width: 4rem;
+  height: 4rem;
+}
+.main-content__tool-sub {
+  line-height: 1.5;
+}
+.main-content__companies {
+  width: min(115rem, 100%);
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  align-items: center;
+  justify-items: space-between;
+  gap: 4rem;
+}
+.main-content__company-logo {
+  width: 13rem;
+}
+.main-content__cta {
+  padding: 5rem 0;
+}
 
+.footer {
+  background-color: rgba(159, 171, 178, 0.1);
+  padding: 2rem 22rem;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  column-gap: 10rem;
+}
+.footer__logo {
+  width: 5rem;
+}
+.footer__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  column-gap: 5rem;
+}
+.footer__link:link, .footer__link:visited {
+  text-decoration: none;
+  color: hsl(210deg, 10%, 33%);
+  transition: color, 0.2s;
+}
+.footer__link:hover, .footer__link:active {
+  color: hsl(171deg, 66%, 44%);
+}
+.footer__socials {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
 .heading-1 {
   font-size: 4rem;
   color: hsl(210deg, 10%, 33%);
+  text-align: center;
 }
 
 .heading-2 {
