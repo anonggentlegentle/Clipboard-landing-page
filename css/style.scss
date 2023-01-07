@@ -3,6 +3,9 @@ $color-blue: hsl(233, 100%, 69%);
 $color-grey-1: hsl(210, 10%, 33%);
 $color-grey-2: hsl(201, 11%, 66%);
 
+$bp-1: 56.25em; // 900px
+$bp-2: 37.5em; // 600px
+
 *,
 *::after,
 *::before {
@@ -43,7 +46,7 @@ video {
 }
 
 .section-heading {
-  width: min(100%, 65rem);
+  width: min(90%, 65rem);
   margin: 0 auto;
 
   display: flex;
@@ -53,6 +56,10 @@ video {
 
   &__photo {
     width: 7rem;
+
+    @media only screen and (max-width: $bp-2) {
+      width: 10rem;
+    }
   }
 
   &__subtitle {
@@ -63,6 +70,11 @@ video {
     display: flex;
     column-gap: 1.5rem;
     margin-top: 2rem;
+
+    @media only screen and (max-width: $bp-2) {
+      flex-direction: column;
+      row-gap: 1.5rem;
+    }
   }
 
   &__button {
@@ -98,6 +110,7 @@ video {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 0 4rem;
 
   &--1 {
     padding: 5rem 0;
@@ -129,31 +142,58 @@ video {
     display: flex;
     align-items: center;
     column-gap: 1rem;
+
+    @media only screen and (max-width: $bp-1) {
+      flex-direction: column;
+      row-gap: 3rem;
+    }
   }
 
   &__left {
     width: 50%;
+
+    @media only screen and (max-width: $bp-1) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   &__right {
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
+
+    @media only screen and (max-width: $bp-1) {
+      width: 70%;
+    }
   }
 
   &__photo-1 {
     width: 65rem;
     translate: -35rem 0;
+
+    @media only screen and (max-width: $bp-1) {
+      translate: 0;
+      width: 100%;
+    }
   }
 
   &__features-box {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+
+    @media only screen and (max-width: $bp-1) {
+      align-items: center;
+    }
   }
 
   &__description {
     line-height: 1.5;
+
+    @media only screen and (max-width: $bp-1) {
+      text-align: center;
+    }
   }
 
   &__tools {
@@ -162,6 +202,11 @@ video {
 
     display: flex;
     column-gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-2) {
+      flex-direction: column;
+      row-gap: 6rem;
+    }
   }
 
   &__tool-box {
@@ -170,6 +215,10 @@ video {
     flex-direction: column;
     align-items: center;
     row-gap: 2rem;
+
+    @media only screen and (max-width: $bp-2) {
+      width: 100%;
+    }
   }
 
   &__tool-icon {
@@ -182,14 +231,18 @@ video {
   }
 
   &__companies {
-    width: min(115rem, 100%);
+    width: min(120rem, 100%);
     margin-top: 8rem;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     align-items: center;
-    justify-items: space-between;
+    justify-items: center;
     gap: 4rem;
+
+    @media only screen and (max-width: $bp-2) {
+      row-gap: 6rem;
+    }
   }
 
   &__company-logo {
@@ -203,13 +256,22 @@ video {
 
 .footer {
   background-color: rgba($color-grey-2, 0.1);
-  padding: 2rem 22rem;
+  padding: 2rem;
   margin-top: 4rem;
 
-  display: flex;
-  // justify-content: space-between;
-  align-items: center;
-  column-gap: 10rem;
+  &__content {
+    width: min(115rem, 100%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10rem;
+
+    @media only screen and (max-width: $bp-1) {
+      flex-direction: column;
+      row-gap: 4rem;
+    }
+  }
 
   &__logo {
     width: 5rem;
@@ -222,6 +284,27 @@ video {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 2rem;
     column-gap: 5rem;
+
+    @media only screen and (max-width: $bp-1) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $bp-2) {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+    }
+  }
+
+  &__item--4 {
+    @media only screen and (max-width: $bp-2) {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__item--5 {
+    @media only screen and (max-width: $bp-2) {
+      grid-row: 4 / 5;
+    }
   }
 
   &__link {
@@ -244,9 +327,32 @@ video {
     display: flex;
     align-items: center;
     column-gap: 2rem;
+
+    @media only screen and (max-width: $bp-1) {
+      margin-left: unset;
+    }
+  }
+
+  &__social {
+    &:link,
+    &:visited {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 
   &__social-icon {
+    fill: $color-grey-1;
+    height: 100%;
+    transition: fill 0.2s;
+  }
+
+  &__social:hover &__social-icon {
+    fill: $color-cyan;
+  }
+
+  &__social:active &__social-icon {
+    fill: $color-cyan;
   }
 }
 
@@ -258,8 +364,16 @@ video {
 
 .heading-2 {
   color: $color-grey-1;
+
+  @media only screen and (max-width: $bp-2) {
+    text-align: center;
+  }
 }
 
 .heading-3 {
   color: $color-grey-1;
+
+  @media only screen and (max-width: $bp-2) {
+    text-align: center;
+  }
 }
